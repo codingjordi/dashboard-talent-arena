@@ -1,10 +1,22 @@
 @import "tailwindcss";
+@import "@fontsource/ibm-plex-sans";
+@import "flowbite";
+
+@theme {
+  --font-sans: "IBM Plex Sans", sans-serif !important;
+  --color-co1: #b48cf6;
+  --color-co2: #24beff;
+  --color-co3: #00e3ff;
+  --color-co4: #50fbdf;
+  --border-width-1: 1px;
+}
 
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  font-family: var(--font-sans) !important;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
