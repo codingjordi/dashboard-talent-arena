@@ -1,15 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
 import {ScrollProgress} from "@/components/magicui/scroll-progress";
+import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
 <header
   class="bg-white/80 dark:bg-black/80 p-2 md:p-0 border-b-1 border-solid sticky top-0 z-50 w-full flex items-center justify-center backdrop-blur-md"
 >
   <Icon name="menu" class="text-5xl font-thin md:hidden" />
-  <nav class="container flex items-center justify-between">
+  <nav class="container flex items-center justify-between px-6 py-4">
     <div class="flex items-center gap-2">
-      <Icon name="net" class="text-6xl text-1" />
+      <Icon name="net" class="text-6xl text-co1" />
       <p class="font-extrabold text-3xl">Logo</p>
     </div>
     <ul class="hidden md:flex gap-4">
@@ -22,7 +23,10 @@ import {ScrollProgress} from "@/components/magicui/scroll-progress";
       <li>
         <a href="/contact" class="font-bold text-lg">Contact</a>
       </li>
+     
     </ul>
+    <ThemeSwitch />
   </nav>
+
 </header>
-<!-- <ScrollProgress /> -->
+<ScrollProgress client:load/>

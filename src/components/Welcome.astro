@@ -1,11 +1,22 @@
 ---
-import { Button } from "@/components/ui/button";
-// import { AnimatedCircularProgressBar } from "@/components/magicui/animated-circular-progress-bar";
-// import { Globe } from "@/components/magicui/globe";
+import { AnimatedCircularProgressBar } from "@/components/magicui/animated-circular-progress-bar";
 import Breadcrumb from "@/components/flowbite/Breadcrumb.astro";
+import { Globe } from "./magicui/globe";
+
 ---
 
-<div class="container text-primary flex flex-col gap-10 py-20">
+
+<div class="container text-primary flex flex-col gap-10 py-20 pb-90">
   <Breadcrumb />
-  <Button>Hello World</Button>
+  <div class="flex bottom-0 h-72 relative">
+    <Globe client:load />
+  </div>
+  <AnimatedCircularProgressBar
+    client:load
+    max={100}
+    value={56}
+    min={0}
+    gaugePrimaryColor="#24beff"
+    gaugeSecondaryColor="#b48cf6"
+  />
 </div>

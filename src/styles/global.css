@@ -16,7 +16,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  font-family: var(--font-sans) !important;
+  --font-sans: "IBM Plex Sans", sans-serif;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
