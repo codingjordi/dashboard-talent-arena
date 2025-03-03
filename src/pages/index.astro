@@ -1,23 +1,22 @@
 ---
-import ProfilesList from '@/components/ProfilesList.astro';
-import Layout from '../layouts/Layout.astro';
-
-import Map from '@/components/Map.astro';
-
-
-
-
+import ProfilesList from "@/components/ProfilesList.astro";
+import Layout from "../layouts/Layout.astro";
+import MapList from "@/components/MapList.astro";
+import Map from "@/components/Map.astro";
+import Graph from "@/components/flowbite/Graph.astro";
 ---
 
 <Layout>
-    <div class="md:flex items-center">
-    	<Map/>
-		<ProfilesList />
+  <div class="grid grid-cols-12 container">
+    <div class="col-span-2 border-r-1 p-6 md:pt-12">
+      <MapList />
     </div>
-
-
-
-
-
-
+    <div class="col-span-10 flex flex-col overflow-auto max-h-[800px]">
+      <div class="flex w-full">
+        <ProfilesList />
+        <Graph client:load />
+      </div>
+      <Map />
+    </div>
+  </div>
 </Layout>
