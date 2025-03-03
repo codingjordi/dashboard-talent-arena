@@ -2,11 +2,15 @@
 
 ---
 
-<section>
-    <h1 class="text-4xl font-bold text-white">
+<section class="py-8 px-0">
+    <h1 class="text-3xl font-bold text-white mb-3">
         U-SAFE: Enterprise Safety Zone Management
     </h1>
-    <ul>
+    <h2 class="text-xl underline">App Overview
+    </h2>
+    <p class="text-xl font-semibold mt-4">U-SAFE enables enterprises to establish and manage controlled physical working zones within their facilities to monitor and prevent security incidents.</p>
+    <p class="my-3 text-lg">These zones are classified into two categories:</p>
+    <ul class="list-disc flex flex-col gap-2">
         <li>
             Secure Zones: Standard working areas suitable for all staff
         </li>
@@ -15,8 +19,8 @@
         </li>
     </ul>
 
-    <h3>User Implementation</h3>
-    <ul>
+    <h3 class="text-2xl">User Implementation</h3>
+    <ul class="list-disc flex flex-col gap-2 ml-0">
         <li>
             All employees receive company smartphones with pre-installed U-SAFE application
         </li>
@@ -31,13 +35,13 @@
         </li>
     </ul>
 
-    <h2>Core Capabilities</h2>
+    <h2 class="text-4xl font-medium underline">Core Capabilities</h2>
     <p>
         Our solution leverages Nokia's Network as Code APIs to provide enhanced security and monitoring:
     </p>
-    <ol>
+    <ol class="list-decimal">
         <li>Location Management (via Location Verification API)
-            <ul>
+            <ul class="list-disc">
                 <li>Real-time tracking of all staff within Secure Zones</li>
                 <li>Monitoring of authorized personnel in Risk Zones</li>
                 <li>Instant alerts when unauthorized staff enter Risk Zones</li>
@@ -45,31 +49,31 @@
             </ul>
         </li>
         <li>Enhanced Connectivity (via Quality-of-service on Demand API)
-            <ul>
+            <ul class="list-disc">
                 <li>Automatically increases network quality and reliability for staff in Risk Zones</li>
                 <li>Ensures critical communications remain stable in hazardous environments</li>
                 <li>Enables clear emergency communications between dashboard operators and employees</li>
             </ul>
         </li>
         <li>Device Status Monitoring (via Device Status API)
-            <ul>
+            <ul class="list-disc">
                 <li>Continuous monitoring of staff device connectivity</li>
                 <li>Immediate notification of disconnected devices</li>
                 <li>Visual representation of offline employees on the monitoring dashboard</li>
             </ul>
         </li>
     </ol>
-    <h2>
+    <h2 class="text-4xl underline">
         Use Case Scenarios
     </h2>  
     <h3>Standard Operations</h3>
-    <ul>
+    <ul class="list-disc">
         <li>
             Employees in Secure Zones
-            <ul>
+            <ul class="list-disc">
                 <li>
                     Monitoring dashboard displays employees in green
-                    <ul>
+                    <ul class="list-disc">
                         <li>Employee devices show green status badges
                         </li>
                         <li>Normal network parameters applied
@@ -91,7 +95,7 @@
     </ul>
 
     <h3>Safety Interventions</h3>
-    <ul>
+    <ul class="list-disc">
         <li>
             Unauthorized Employee Enters Risk Zone
             <ul>
@@ -117,5 +121,48 @@
             </ul>
         </li>
     </ul>
+    <h3>Employee Goes Offline
+    </h3>
+    <ul class="list-disc">
+        <li>
+            Monitoring dashboard displays offline status
+            <ul class="list-disc">
+                <li>
+                    Last known location remains visible to operators
+                    <ul class="list-disc">
+                        <li>System can initiate predetermined emergency protocols based on last location
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h2 class="text-4xl underline">Implementation Benefits
+    </h2>
+    <h3>Safety & Response
+    </h3>
+    <ul class="list-disc">
+        <li>Prevents unauthorized access to hazardous areas with real-time alerts</li>
+        <li>Decreases emergency response time through instant notifications</li>
+        <li>Enables peer intervention through proximity alerts to nearby employees</li>
+        <li>Ensures reliable communications during critical situations</li>
+    </ul>
+    <h3>Operational Advantages
+    </h3>
+    <ul class="list-disc">
+        <li>Centralizes monitoring through an intuitive color-coded dashboard</li>
+        <li>Reduces safety management overhead through automation</li>
+        <li>Creates collective responsibility with every employee as a potential first responder</li>
+        <li>Provides multiple warning layers combining system alerts with human intervention</li>
+    </ul>
+    <h3>Business Value
+    </h3>
+    <ul class="list-disc">
+        <li class="pl-[-20px]">Helps meet regulatory compliance requirements with comprehensive audit logs</li>
+        <li>Reduces costs associated with workplace incidents and insurance</li>
+        <li>Improves productivity by optimizing zone management and reducing disruptions</li>
+        <li>Demonstrates organizational commitment to employee safety</li>
+    </ul>
+    
 
 </section>
