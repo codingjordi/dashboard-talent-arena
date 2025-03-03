@@ -1,0 +1,65 @@
+---
+
+import StatusLight from './StatusLight.astro';
+
+interface Props {
+  nickname: number;
+  status: number;
+  avatarUrl: string;
+}
+
+const { nickname, status, avatarUrl } = Astro.props as Props;
+
+
+const mockUsers = [
+    {
+        nickname: 'Tim Cook',
+        status: 1,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random1"
+    },
+    {
+        nickname: 'Anna Who',
+        status: 0,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random2"
+    },
+    {
+        nickname: 'Jack Wolff',
+        status: 2,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random3"
+    },
+    {
+        nickname: 'Amanda Woodcock',
+        status: 3,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random4"
+    },
+    {
+        nickname: 'Nathan Gateault',
+        status: 2,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random5"
+    },
+    {
+        nickname: 'Peter Gutierrez',
+        status: 1,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random6"
+    },
+    {
+        nickname: 'Ana Lisa Melán',
+        status: 1,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random7"
+    },
+    {
+        nickname: 'James Green',
+        status: 3,
+        avatarUrl: "https://api.dicebear.com/7.x/personas/svg?seed=random8"
+    },
+
+]
+---
+
+
+<ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    {mockUsers.map((user) => (
+    <Profileba>
+    ))} 
+ </ul>
+ 
