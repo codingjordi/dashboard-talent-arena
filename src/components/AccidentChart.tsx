@@ -56,7 +56,7 @@ const AccidentesChart = () => {
   };
 
   return (
-    <div className="w-1/2 p-4 rounded-xl border-1 flex flex-col justify-baseline">
+    <div className="py-6 md:py-0 w-full md:w-1/2 p-4 rounded-xl border-1 flex flex-col justify-baseline">
       <h2 className="text-2xl font-semibold mb-4 py-6">Risk last year</h2>
       <div className="h-96 mt-auto">
         <Line data={data} options={options} />
