@@ -1,0 +1,22 @@
+<div
+  id="sidebar"
+  class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-black shadow-lg transform -translate-x-full transition-transform duration-300"
+>
+  <div class="p-4">
+    <a href="/about" class="block py-2 text-lg font-bold">About</a>
+    <a href="/contact" class="block py-2 text-lg font-bold">Contact</a>
+    <a href="/" class="block py-2 text-lg font-bold">Dashboard</a>
+    <a href="/about" class="block py-2 text-lg font-bold">Zones</a>
+    <a href="/contact" class="block py-2 text-lg font-bold">Profiles</a>
+  </div>
+</div>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu");
+    const sidebar = document.getElementById("sidebar");
+
+    menuIcon.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+    });
+  });
+</script>

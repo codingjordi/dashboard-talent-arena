@@ -15,7 +15,7 @@ import Footer from "@/components/Footer.astro";
   </head>
   <body class="flex flex-col items-center">
     <Header />
-    <main class="flex container px-5">
+    <main class="flex container px-5 md:overflow-hidden">
       <slot />
     </main>
     <Footer />
@@ -26,11 +26,3 @@ import Footer from "@/components/Footer.astro";
   </body>
 </html>
 
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

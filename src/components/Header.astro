@@ -10,11 +10,11 @@ const isHome = pathname.includes("about") || pathname.includes("contact") || pat
 <header
   class="bg-white/80 dark:bg-black/80 p-2 md:p-0 border-b-1 border-solid sticky top-0 z-50 w-full flex items-center justify-center backdrop-blur-md"
 >
-  <Icon name="menu" class="text-5xl font-thin md:hidden" />
-  <nav class="container flex items-center justify-between px-6 py-4">
+  <Icon name="menu" class="text-5xl font-thin md:hidden" id="menu"/>
+  <nav class="container flex items-center  justify-between px-6 py-4">
     <a class="flex items-center gap-2" href="/home">
-      <Icon name="net" class="text-6xl text-co1" />
-      <p class="font-extrabold text-3xl">Opertator</p>
+      <Icon name="net" class="md:text-6xl text-co1" />
+      <p class="font-extrabold md:text-3xl">Opertator</p>
     </a>
 
     <div class="flex items-center gap-8">
