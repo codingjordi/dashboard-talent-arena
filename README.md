@@ -1,11 +1,7 @@
-https://magicui.design/docs/components/globe
+https://magicui.design/docs/components/globe //Animaciones
 
-https://flowbite.com/docs/getting-started/astro/
+https://flowbite.com/docs/getting-started/astro/ // Landing
 
 Gráficas
 
 https://www.tradingview.com/lightweight-charts/
-
-
-Dash:
-https://dribbble.com/shots/25681425-Dashboard-UI-Bank
