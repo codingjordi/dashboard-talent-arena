@@ -1,11 +1,14 @@
 ---
-import Card from "./ui/Card.astro"
+import Card from "./ui/Card.astro";
 ---
 
+<section>
+    <h2 class="py-6 text-4xl font-bold">Reporting overview</h2>
 
-<div class="w-full shrink-0 p-6 flex gap-6 relative overflow-x-auto">
+  <div class="w-full shrink-0 p-6 flex gap-6 relative overflow-x-auto">
     <Card name="Jack Wolff" status="Danger" icon="alert" />
     <Card name="Nathan Gateault" status="Danger" icon="alert" />
     <Card name="Tim Cook" status="Authorized" icon="auth" />
     <Card name="Anna Who" status="Secure" icon="people" />
-</div>
+  </div>
+</section>

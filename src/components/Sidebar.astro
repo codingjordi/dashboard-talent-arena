@@ -1,12 +1,16 @@
 <div
   id="sidebar"
-  class="fixed  top-0 left-0 w-64 z-50 h-screen backdrop-blur-xl shadow-lg transform -translate-x-full transition-transform duration-300"
+  class="fixed top-0 left-0 w-72 z-50 h-screen backdrop-blur-xl shadow-lg transform -translate-x-full transition-transform duration-300"
+  style="
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  "
 >
-  <div class="p-4 flex justify-between items-center">
+  <div class="p-6 flex justify-between items-center">
     <h2 class="text-xl font-bold">Menu</h2>
-    <button id="close-sidebar" class="text-2xl font-bold cursor-pointer">&times;</button>
+    <button id="close-sidebar" class="text-5xl font-bold cursor-pointer">&times;</button>
   </div>
-  <div class="p-4 ">
+  <div class="p-6">
     <a href="/about" class="block py-2 text-lg font-bold">About</a>
     <a href="/contact" class="block py-2 text-lg font-bold">Contact</a>
     <a href="/" class="block py-2 text-lg font-bold">Dashboard</a>

@@ -12,7 +12,15 @@ import {
 } from "chart.js";
 
 // Registrar los módulos de Chart.js
-ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
+ChartJS.register(
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const AccidentesChart = () => {
   const data = {
@@ -20,7 +28,7 @@ const AccidentesChart = () => {
     datasets: [
       {
         label: "Accidents",
-        data: [2, 3, 1, 4, 2, 5, 3, 2, 4, 3, 2, 1], // Datos ficticios más pequeños
+        data: [2, 3, 1, 4, 2, 5, 3, 2], // Datos ficticios más pequeños
         borderColor: "#3B82F6", // blue-500 de Tailwind
         pointBackgroundColor: "#3B82F6",
         pointBorderColor: "#ffffff",
@@ -31,7 +39,7 @@ const AccidentesChart = () => {
       },
       {
         label: "Solved Accidents",
-        data: [1, 2, 0.5, 3, 1.5, 4, 2.5, 1.5, 3, 2.5, 1.5, 0.5], // Datos ficticios menores
+        data: [1, 2, 0, 3, 1, 5, 3, 2], // Datos ficticios menores
         borderColor: "#10B981", // green-500 de Tailwind
         pointBackgroundColor: "#10B981",
         pointBorderColor: "#ffffff",
@@ -43,7 +51,7 @@ const AccidentesChart = () => {
     ],
   };
 
-  const options = {
+  const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
