@@ -16,17 +16,29 @@ ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Title, T
 
 const AccidentesChart = () => {
   const data = {
-    labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
     datasets: [
       {
-        label: "Accidents ",
+        label: "Accidents",
         data: [2, 3, 1, 4, 2, 5, 3, 2, 4, 3, 2, 1], // Datos ficticios más pequeños
         borderColor: "#3B82F6", // blue-500 de Tailwind
         pointBackgroundColor: "#3B82F6",
         pointBorderColor: "#ffffff",
         pointHoverBackgroundColor: "#2563EB", // blue-600 al pasar el ratón
-        borderWidth: 2,
+        borderWidth: 8,
         tension: 0.4, // Suaviza la línea
+        pointRadius: 0, // Quitar los puntos
+      },
+      {
+        label: "Solved Accidents",
+        data: [1, 2, 0.5, 3, 1.5, 4, 2.5, 1.5, 3, 2.5, 1.5, 0.5], // Datos ficticios menores
+        borderColor: "#10B981", // green-500 de Tailwind
+        pointBackgroundColor: "#10B981",
+        pointBorderColor: "#ffffff",
+        pointHoverBackgroundColor: "#059669", // green-600 al pasar el ratón
+        borderWidth: 8,
+        tension: 0.4, // Suaviza la línea
+        pointRadius: 0, // Quitar los puntos
       },
     ],
   };
@@ -49,7 +61,7 @@ const AccidentesChart = () => {
         grid: { color: "currentColor" }, // gray-300 con opacidad
       },
       y: {
-        ticks: { color: "currentColor" },
+        ticks: { color: "currentColor", stepSize: 1, beginAtZero: true }, // Mostrar solo números enteros
         grid: { color: "currentColor" },
       },
     },

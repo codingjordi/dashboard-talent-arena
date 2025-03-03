@@ -3,23 +3,31 @@ import ProfilesList from "@/components/ProfilesList.astro";
 import Layout from "../layouts/Layout.astro";
 import MapList from "@/components/MapList.astro";
 import Map from "@/components/Map.astro";
+import Report from "@/components/Report.astro";
 import Graph from "@/components/flowbite/Graph.astro";
 import { AccidentesChart } from "@/components/AccidentChart";
+import Smmap from "@/components/Smmap.astro";
 ---
 
 <Layout>
-  <div class="grid grid-cols-12 container">
-    <div class="col-span-2 border-r-1 p-6 md:pt-12 sticky top-0 h-screen hidden md:flex">
+  <div class="grid grid-cols-12 container gap-4">
+    <div class="col-span-2 hidden md:block">
       <MapList />
     </div>
     <div
       class="md:col-span-10 col-span-12 flex flex-col overflow-auto md:h-screen pt-10 md:pt-40"
     >
-      <div class="flex w-full flex-col md:flex-row">
+      <Report />
+      <div class="flex w-full flex-col md:flex-row gap-4">
         <ProfilesList />
         <AccidentesChart client:load />
       </div>
-      <Map />
+      <div class="hidden md:block">
+        <Map />
+      </div>
+      <div class="md:hidden overflow-hidden">
+        <Smmap/>
+      </div>
     </div>
   </div>
 </Layout>
