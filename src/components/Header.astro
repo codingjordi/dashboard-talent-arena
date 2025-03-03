@@ -1,12 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import {ScrollProgress} from "@/components/magicui/scroll-progress";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import ThemeSwitch from "./ThemeSwitch.astro";
-
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === "/home";
-
 ---
 
 <header
@@ -14,44 +12,54 @@ const isHome = pathname === "/home";
 >
   <Icon name="menu" class="text-5xl font-thin md:hidden" />
   <nav class="container flex items-center justify-between px-6 py-4">
-    <div class="flex items-center gap-2">
+    <a class="flex items-center gap-2" href="/home">
       <Icon name="net" class="text-6xl text-co1" />
       <p class="font-extrabold text-3xl">Opertator</p>
-    </div>
-    <ul class=`hidden ${!isHome  ? 'hidden' : 'md:flex'} gap-4`>
-      <li>
-        <a href="/" class="font-bold text-lg">Home</a>
-      </li>
-      <li>
-        <a href="/about" class="font-bold text-lg">About</a>
-      </li>
-      <li>
-        <a href="/contact" class="font-bold text-lg">Contact</a>
-      </li>
-    </ul>
+    </a>
 
-    <ul class=`hidden ${isHome ? 'hidden' : 'md:flex'}  gap-4`>
-      <li>
-        <a href="/" class="font-bold text-lg">Dashbaord</a>
-      </li>
-      <li>
-        <a href="/about" class="font-bold text-lg">Zones</a>
-      </li>
-      <li>
-        <a href="/contact" class="font-bold text-lg">Profiles</a>
-      </li>
-    </ul>
+    <div class="flex items-center gap-8">
+      <ul class=`hidden ${!isHome  ? 'hidden' : 'md:flex'} gap-4 items-center`>
+        <li>
+          <a href="/" class="font-bold text-lg">Home</a>
+        </li>
+        <li>
+          <a href="/about" class="font-bold text-lg">About</a>
+        </li>
+        <li>
+          <a href="/contact" class="font-bold text-lg">Contact</a>
+        </li>
+      </ul>
 
-    <div class='flex gap-4'>
-      <a href='/' type="button" class=`${isHome ? 'block' : 'hidden'} text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center`>
-      Log In
+      <ul class=`hidden ${isHome ? 'hidden' : 'md:flex'}  gap-4 items-center`>
+        <li>
+          <a href="/" class="font-bold text-lg">Dashbaord</a>
+        </li>
+        <li>
+          <a href="/about" class="font-bold text-lg">Zones</a>
+        </li>
+        <li>
+          <a href="/contact" class="font-bold text-lg">Profiles</a>
+        </li>
+      </ul>
+    <div class="flex gap-4">
+      <a
+        href="/"
+        type="button"
+        class=`${isHome ? 'block' : 'hidden'} text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center`
+      >
+        Log In
       </a>
-      <a href="/home" type="button" class=`${isHome ? 'hidden' : 'block'} text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center`>
+      <a
+        href="/home"
+        type="button"
+        class=`${isHome ? 'hidden' : 'block'} text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center`
+      >
         Log Out
       </a>
       <ThemeSwitch />
     </div>
-  </nav>
+  </div>
 
+  </nav>
 </header>
-<ScrollProgress client:load/>
+<ScrollProgress client:load />

@@ -1,108 +1,98 @@
 ---
 import img from "@/assets/map.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+
+interface Zone {
+  id: number;
+  status: number;
+  name: string;
+  location: {
+    lat: number;
+    long: number;
+    rad: number;
+  };
+  devices: Record<string, any>;
+}
+
+const zones: Zone[] = [
+  {
+    id: 0,
+    status: 0,
+    name: "Connection",
+    location: {
+      lat: 41.373419,
+      long: 2.14952,
+      rad: 20,
+    },
+    devices: {},
+  },
+  {
+    id: 1,
+    status: 0,
+    name: "Hotspot",
+    location: {
+      lat: 41.372703,
+      long: 2.149429,
+      rad: 20,
+    },
+    devices: {},
+  },
+  {
+    id: 2,
+    status: 0,
+    name: "SwitchonTalks",
+    location: {
+      lat: 41.37203,
+      long: 2.150384,
+      rad: 20,
+    },
+    devices: {},
+  },
+
+
+];
+// Status 0: Green, 1: Red
 ---
 
 <section class="container flex flex-col py-20 md:py-40 relative">
-    <div class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <!-- Repite las filas para completar las 4 filas -->
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <!-- Repite las filas para completar las 4 filas -->
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
-        <div class="bg-red-500/50"></div>
-        <div class="bg-green-500/50"></div>
-        <div class="bg-blue-500/50"></div>
-        <div class="bg-yellow-500/50"></div>
-        <div class="bg-purple-500/50"></div>
-        <div class="bg-pink-500/50"></div>
-        <div class="bg-indigo-500/50"></div>
-        <div class="bg-teal-500/50"></div>
-        <div class="bg-orange-500/50"></div>
-        <div class="bg-lime-500/50"></div>
-        <div class="bg-cyan-500/50"></div>
-        <div class="bg-amber-500/50"></div>
+  <div id="zones" class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
+    <div
+      class="zone border-solid border-red-500 bg-red-500/50 col-start-5 col-end-7 row-start-5 row-end-6 rounded-md border-1 animate-pulse"
+    >
     </div>
-    <Image src={img} alt="Map" class="w-full h-auto" />
+    <div
+      class="zone border-solid border-green-500 bg-green-500/50 col-start-2 col-end-4 row-start-6 row-end-7 rounded-md border-1"
+    >
+    </div>
+    <div
+      class="zone border-solid border-green-500 bg-green-500/50 col-start-8 col-end-10 row-start-6 row-end-7 rounded-md border-1"
+    >
+    </div>
+  </div>
+  <Image src={img} alt="Map" class="w-full h-auto" />
 </section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const zones = document.querySelectorAll(".zone");
+    setInterval(() => {
+      zones.forEach((zone) => {
+        if (zone.classList.contains("bg-red-500/50")) {
+          zone.classList.remove(
+            "bg-red-500/50",
+            "border-red-500",
+            "animate-pulse"
+          );
+          zone.classList.add("bg-green-500/50", "border-green-500");
+        } else {
+          zone.classList.remove("bg-green-500/50", "border-green-500");
+          zone.classList.add(
+            "bg-red-500/50",
+            "border-red-500",
+            "animate-pulse"
+          );
+        }
+      });
+    }, 10000); // Cambia el color cada 10 segundos
+  });
+</script>
