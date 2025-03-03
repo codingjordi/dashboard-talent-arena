@@ -1,8 +1,108 @@
 ---
-const users = [
-  { id: 1, name: "Juan", lat: 41.3726, lon: 2.1514 },
-  { id: 2, name: "Ana", lat: 41.3722, lon: 2.1518 },
-  { id: 3, name: "Carlos", lat: 41.3728, lon: 2.1521 },
-];
-
+import img from "@/assets/map.png";
+import { Image } from 'astro:assets';
 ---
+
+<section class="container flex flex-col py-20 md:py-40 relative">
+    <div class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <!-- Repite las filas para completar las 4 filas -->
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <!-- Repite las filas para completar las 4 filas -->
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+        <div class="bg-red-500/50"></div>
+        <div class="bg-green-500/50"></div>
+        <div class="bg-blue-500/50"></div>
+        <div class="bg-yellow-500/50"></div>
+        <div class="bg-purple-500/50"></div>
+        <div class="bg-pink-500/50"></div>
+        <div class="bg-indigo-500/50"></div>
+        <div class="bg-teal-500/50"></div>
+        <div class="bg-orange-500/50"></div>
+        <div class="bg-lime-500/50"></div>
+        <div class="bg-cyan-500/50"></div>
+        <div class="bg-amber-500/50"></div>
+    </div>
+    <Image src={img} alt="Map" class="w-full h-auto" />
+</section>

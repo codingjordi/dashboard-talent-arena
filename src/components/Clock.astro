@@ -1,0 +1,48 @@
+---
+import { NumberTicker } from "./magicui/number-ticker";
+
+const getCurrentTime = () => {
+  const now = new Date();
+  return {
+    hours: now.getHours(),
+    minutes: now.getMinutes(),
+    seconds: now.getSeconds()
+  };
+};
+---
+
+<div id="clock" class="text-3xl font-bold w-full text-center py-40 md:py-20 flex items-baseline gap-2 justify-center">
+  <NumberTicker
+    client:load
+    value={getCurrentTime().hours}
+    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+  />
+  <span>:</span>
+  <NumberTicker
+    client:load
+    value={getCurrentTime().minutes}
+    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+  />
+  <span>:</span>
+  <NumberTicker
+    client:load
+    value={getCurrentTime().seconds}
+    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+  />
+</div>
+
+<script is:inline>
+  const clockElement = document.getElementById("clock");
+  const hourTicker = clockElement.children[0];
+  const minuteTicker = clockElement.children[2];
+  const secondTicker = clockElement.children[4];
+
+  const updateClock = () => {
+    const now = new Date();
+    hourTicker.value = now.getHours();
+    minuteTicker.value = now.getMinutes();
+    secondTicker.value = now.getSeconds();
+  };
+
+  setInterval(updateClock, 1000);
+</script>

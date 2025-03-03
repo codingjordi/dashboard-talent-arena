@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Clock from "@/components/Clock.astro";
+import Bandwidth from "@/components/Bandwidth.astro";
+import BtnAlert from "@/components/BtnAlert.astro";
+import { PulsatingButton } from "@/components/magicui/pulsating-button";
+---
+
+<Layout>
+  <section class="container">
+    <Clock size="64" />
+    <!-- <Bandwidth /> -->
+
+
+    <BtnAlert />
+  </section>
+</Layout>
+<!-- 
+    Reloj
+    Ancho de banda mejorado para zonas de riesgo
+
+    
+    tick verde si estas ok
+    tick amarillo zona riesgo pero autorizado
+    tick rojo no autorizado con alarma
+
+-->
