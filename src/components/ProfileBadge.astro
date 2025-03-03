@@ -1,10 +1,19 @@
 ---
 import StatusLight from './StatusLight.astro';
 
-const { users } = Astro.props;
+const { profile } = Astro.props;
 ---
 
-
-{users?.map((user) => (
-
-))}
+<li class="pb-3 sm:pb-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
+       <div class="shrink-0">
+          <img class="w-8 h-8 rounded-full" src={profile.avatarUrl} alt="Neil image">
+       </div>
+       <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+             {profile.nickname}
+          </p>
+       </div>
+       <StatusLight status={profile.status} />
+    </div>
+ </li>

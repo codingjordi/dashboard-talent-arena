@@ -1,15 +1,12 @@
 ---
 
-import StatusLight from './StatusLight.astro';
+import ProfileBadge from './ProfileBadge.astro';
 
 interface Props {
   nickname: number;
   status: number;
   avatarUrl: string;
 }
-
-const { nickname, status, avatarUrl } = Astro.props as Props;
-
 
 const mockUsers = [
     {
@@ -58,6 +55,8 @@ const mockUsers = [
 
 
 <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-   
+   {mockUsers.map((user) => (
+        <ProfileBadge profile={user} />
+   ))}
  </ul>
  
