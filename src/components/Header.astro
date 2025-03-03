@@ -2,15 +2,16 @@
 import { Icon } from "astro-icon/components";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import ThemeSwitch from "./ThemeSwitch.astro";
+import Sidebar from "@/components/Sidebar.astro";
 
 const pathname = Astro.url.pathname;
 const isHome = pathname.includes("about") || pathname.includes("contact") || pathname.includes("home");
 ---
 
 <header
-  class="bg-white/80 dark:bg-black/80 p-2 md:p-0 border-b-1 border-solid sticky top-0 z-50 w-full flex items-center justify-center backdrop-blur-md"
+  class="p-2 md:p-0 border-b-1 border-solid sticky top-0 z-50 w-full flex items-center justify-center backdrop-blur-md"
 >
-  <Icon name="menu" class="text-5xl font-thin md:hidden" id="menu"/>
+  <Icon name="menu" class="text-5xl font-thin md:hidden cursor-pointer" id="menu"/>
   <nav class="container flex items-center  justify-between px-6 py-4">
     <a class="flex items-center gap-2" href="/home">
       <Icon name="net" class="md:text-6xl text-co1" />
@@ -56,4 +57,6 @@ const isHome = pathname.includes("about") || pathname.includes("contact") || pat
 
   </nav>
 </header>
+<Sidebar />
+
 <ScrollProgress client:load />
