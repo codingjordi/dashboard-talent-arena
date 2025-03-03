@@ -1,13 +1,13 @@
 ---
-const phone = "123-456-7890";
 interface Props {
   status: number | null;
+  href: string;
 }
-const { status } = Astro.props;
+const { status, href } = Astro.props;
 import { Icon } from 'astro-icon/components'
 ---
 
-<a href={`tel:${phone}`}>
+<a href={href}>
   <div
     class={`font-bold self-center rounded-xl flex flex-col items-center text-8xl gap-2 justify-center backdrop-blur ${status === 0 ? "bg-green-400/80" : status === 1 ? "bg-yellow-400/80" : status === 2 ? "bg-red-400/80" : status === 3 ? "bg-gray-400/80 opacity-50" : ""}`}
   >
