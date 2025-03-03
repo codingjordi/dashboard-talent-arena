@@ -6,7 +6,7 @@ interface Props {
 const { status } = Astro.props as Props;
 ---
 
-<span class={`flex w-3 h-3 me-3 rounded-full ${
+<span class={`flex w-3 h-3 me-3 rounded-full animate-pulse ${
   status === 0 ? 'bg-green-500' :
   status === 1 ? 'bg-yellow-500' :
   status === 2 ? 'bg-red-500' :

@@ -10,7 +10,7 @@ const { profile } = Astro.props;
           <img class="w-8 h-8 rounded-full" src={profile.avatarUrl} alt="Neil image">
        </div>
        <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+          <p class=`text-sm font-medium truncate ${profile.status === 2 ? 'text-red-500 animate-pulse drop-shadow-xl' : ' text-gray-900  dark:text-white' } `>
              {profile.nickname}
           </p>
        </div>
