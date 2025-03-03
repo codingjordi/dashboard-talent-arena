@@ -48,47 +48,35 @@ const zones: Zone[] = [
     },
     devices: {},
   },
-
-
 ];
 // Status 0: Green, 1: Red
 ---
 
-<section class="container flex flex-col py-80 relative">
+<section class="container flex flex-col pt-6 relative">
   <div id="zones" class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
     <div
-      class="zone border-solid border-red-500 bg-red-500/50 col-start-1 col-end-7 row-start-5 row-end-6 rounded-md border-1 animate-pulse"
+      class="zone border-solid border-red-500 bg-red-500/50 col-start-1 col-end-7 row-start-6 row-end-8 rounded-md border-1 animate-pulse"
     >
     </div>
     <div
-      class="zone border-solid border-green-500 bg-green-500/10 col-start-7 col-end-11 row-start-4 row-end-7 rounded-md border-1"
+      class="zone border-solid border-green-500 bg-green-500/10 col-start-7 col-end-11 row-start-5 row-end-9 rounded-md border-1"
     >
     </div>
   </div>
   <Image src={img} alt="Map" class="w-full h-auto" />
 </section>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const zones = document.querySelectorAll(".zone");
-    setInterval(() => {
-      zones.forEach((zone) => {
-        if (zone.classList.contains("bg-red-500/50")) {
-          zone.classList.remove(
-            "bg-red-500/50",
-            "border-red-500",
-            "animate-pulse"
-          );
-          zone.classList.add("bg-green-500/50", "border-green-500");
-        } else {
-          zone.classList.remove("bg-green-500/50", "border-green-500");
-          zone.classList.add(
-            "bg-red-500/50",
-            "border-red-500",
-            "animate-pulse"
-          );
-        }
-      });
-    }, 10000); // Cambia el color cada 10 segundos
-  });
-</script>
+<section class="container flex flex-col items-start gap-6 pt-6 pb-30">
+  <div class="flex items-center gap-4">
+    <div class="bg-red-500 animate-pulse h-4 w-4"></div><p>
+      Employee in the restringed area
+    </p>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="bg-yellow-500 animate-pulse h-4 w-4"></div><p>
+      Employee authorized in the restringed area
+    </p>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="bg-green-500 animate-pulse h-4 w-4"></div><p>Work area</p>
+  </div>
+</section>

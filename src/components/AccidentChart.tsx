@@ -59,24 +59,24 @@ const AccidentesChart = () => {
         display: true,
         position: "top",
         labels: {
-          color: "currentColor", // gray-700 de Tailwind
+          color: "#374151", // gray-700 de Tailwind
         },
       },
     },
     scales: {
       x: {
-        ticks: { color: "currentColor" },
-        grid: { color: "currentColor" }, // gray-300 con opacidad
+        ticks: { color: "#374151" },
+        grid: { color: "#D1D5DB" }, // gray-300 con opacidad
       },
       y: {
-        ticks: { color: "currentColor", stepSize: 1, beginAtZero: true }, // Mostrar solo números enteros
-        grid: { color: "currentColor" },
+        ticks: { color: "#374151", stepSize: 1, beginAtZero: true }, // Mostrar solo números enteros
+        grid: { color: "#D1D5DB" },
       },
     },
   };
 
   return (
-    <div className="py-6 md:py-0 w-full md:w-1/2 p-4 rounded-xl border-1 flex flex-col justify-baseline">
+    <div className="py-6 md:py-0 w-full md:w-1/2 p-4 rounded-xl border-1 flex-grow">
       <h2 className="text-2xl font-semibold mb-4 py-6">Risk last year</h2>
       <div className="h-96 mt-auto">
         <Line data={data} options={options} />
