@@ -1,34 +1,52 @@
 ---
 import { NumberTicker } from "./magicui/number-ticker";
 
+interface Props {
+  status: number | null;
+}
+const { status } = Astro.props;
+
 const getCurrentTime = () => {
   const now = new Date();
   return {
     hours: now.getHours(),
     minutes: now.getMinutes(),
-    seconds: now.getSeconds()
+    seconds: now.getSeconds(),
   };
 };
+const currentTime = getCurrentTime();
+
+
 ---
 
-<div id="clock" class="text-3xl font-bold w-full text-center py-40 md:py-20 flex items-baseline gap-2 justify-center">
-  <NumberTicker
-    client:load
-    value={getCurrentTime().hours}
-    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
-  />
-  <span>:</span>
-  <NumberTicker
-    client:load
-    value={getCurrentTime().minutes}
-    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
-  />
-  <span>:</span>
-  <NumberTicker
-    client:load
-    value={getCurrentTime().seconds}
-    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
-  />
+<div class="w-full text-center py-40 md:py-20">
+  <div
+    id="clock"
+    class={` font-bold flex items-baseline text-8xl gap-2 justify-center ${ status === 1 ? "text-yellow-500" : status === 2 ? "text-red-500" : status === 3 ? "opacity-50" : ""}`}
+  >
+    
+  {status === 0 ? (
+    <>
+      <NumberTicker
+        client:load
+        value={currentTime.hours}
+        className="whitespace-pre-wrap text-8xl font-medium tracking-tighter "
+      />
+      <span>:</span>
+      <NumberTicker
+        client:load
+        value={currentTime.minutes}
+        className="whitespace-pre-wrap text-8xl font-medium tracking-tighter "
+      />
+    </>
+  ) : (
+    <span className="whitespace-pre-wrap text-8xl font-medium tracking-tighter">
+      {`${currentTime.hours}:${currentTime.minutes}`}
+    </span>
+  )}
+
+  </div>
+  {status === 3 && <div class="text-red-500 mt-4 text-xl">Offline</div>}
 </div>
 
 <script is:inline>

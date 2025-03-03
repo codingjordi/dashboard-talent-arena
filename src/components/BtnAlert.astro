@@ -1,5 +1,26 @@
 ---
-
-const phone = "123-456-7890"
+const phone = "123-456-7890";
+interface Props {
+  status: number | null;
+}
+const { status } = Astro.props;
+import { Icon } from 'astro-icon/components'
 ---
 
+<a href={`tel:${phone}`}>
+  <div
+    class={`font-bold self-center rounded-xl flex flex-col items-center text-8xl gap-2 justify-center backdrop-blur ${status === 0 ? "bg-green-400/80" : status === 1 ? "bg-yellow-400/80" : status === 2 ? "bg-red-400/80" : status === 3 ? "bg-gray-400/80 opacity-50" : ""}`}
+  >
+    <div class="p-6 text-9xl">
+      {status === 0 && <Icon name="tick" class="font-thin cursor-pointer" />}
+      {status === 1 && <Icon name="auth" class="font-thin cursor-pointer" />}
+      {status === 2 && <Icon name="forb" class="font-thin cursor-pointer" />}
+      {status === 3 && <Icon name="offline" class="font-thin cursor-pointer" />}
+    </div>
+    {(status === 1 || status === 2) && (
+      <div class="text-xl font-medium text-white mt-2">
+        Call Help
+      </div>
+    )}
+  </div>
+</a>
