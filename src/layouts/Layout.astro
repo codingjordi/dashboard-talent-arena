@@ -12,6 +12,10 @@ import Footer from "@/components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>U-Safe</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body class="flex flex-col items-center">
     <Header />
@@ -19,11 +23,13 @@ import Footer from "@/components/Footer.astro";
       <slot />
     </main>
     <Footer />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"
+    ></script>
     <script
       is:inline
       src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"
     ></script>
   </body>
 </html>
-
