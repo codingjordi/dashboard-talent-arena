@@ -7,16 +7,16 @@ import FeatureCard from "./FeatureCard.astro";
         U-SAFE: Enterprise Safety Zone Management
     </h1>
     <div class="my-9 p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-2xl underline">
+        <h2 class="text-2xl underline mb-5">
             App Overview
         </h2>
-        <p class="text-xl font-semibold mt-4">
-            U-SAFE enables enterprises to establish and manage controlled physical working zones within their facilities to monitor and prevent security incidents.
+        <p class="text-lg">
+            <b>U-SAFE</b> enables enterprises to establish and manage controlled physical working zones within their facilities to monitor and prevent security incidents.
         </p>
         <p class="my-3 text-lg">
             These zones are classified into two categories:
         </p>
-        <ul class="mt-7 flex flex-col md:flex-row justify-center gap-10">
+        <ul class="mt-7 flex flex-col md:flex-row justify-center gap-4 md:gap-10">
             <li>
                 <FeatureCard title="Secure Zones" description="Standard working areas suitable for all staff"/>
             </li>
@@ -27,9 +27,10 @@ import FeatureCard from "./FeatureCard.astro";
     </div>
     
 
-    <div class="p-9 rounded-2xl bg-gray-800">
-        <h3 class="text-2xl">User Implementation</h3>
-        <ul class="list-disc flex flex-col gap-2 ml-0">
+    <div class="p-9 rounded-2xl bg-gray-800 mb-10">
+        <h3 class="text-2xl mb-5 underline">User Implementation</h3>
+        <ul class="list-disc flex flex-col gap-3 ml-[15px]">
+            {/* TO-DO: add more suitable icons instead of disc type*/}
             <li>
                 All employees receive company smartphones with pre-installed U-SAFE application
             </li>
@@ -45,34 +46,42 @@ import FeatureCard from "./FeatureCard.astro";
         </ul>
     </div>
 
-    <h2 class="text-4xl font-medium underline">Core Capabilities</h2>
-    <p>
-        Our solution leverages Nokia's Network as Code APIs to provide enhanced security and monitoring:
-    </p>
-    <ol class="list-decimal">
-        <li>Location Management (via Location Verification API)
-            <ul class="list-disc">
-                <li>Real-time tracking of all staff within Secure Zones</li>
-                <li>Monitoring of authorized personnel in Risk Zones</li>
-                <li>Instant alerts when unauthorized staff enter Risk Zones</li>
-                <li>Color-coded visualization on both employee devices and monitoring dashboard</li>
-            </ul>
-        </li>
-        <li>Enhanced Connectivity (via Quality-of-service on Demand API)
-            <ul class="list-disc">
-                <li>Automatically increases network quality and reliability for staff in Risk Zones</li>
-                <li>Ensures critical communications remain stable in hazardous environments</li>
-                <li>Enables clear emergency communications between dashboard operators and employees</li>
-            </ul>
-        </li>
-        <li>Device Status Monitoring (via Device Status API)
-            <ul class="list-disc">
-                <li>Continuous monitoring of staff device connectivity</li>
-                <li>Immediate notification of disconnected devices</li>
-                <li>Visual representation of offline employees on the monitoring dashboard</li>
-            </ul>
-        </li>
-    </ol>
+    <div class="p-9 rounded-2xl bg-gray-800 mb-10">
+        <h2 class="text-4xl font-medium underline mb-5">Core Capabilities</h2>
+        <p class="mb-3">
+            Our solution leverages Nokia's Network as Code APIs to provide enhanced security and monitoring:
+        </p>
+        <ol class="list-decimal">
+            <div class="bg-gray-700 px-12 py-5 rounded-xl">
+                <li  class="text-2xl"><span>Location Management (via Location Verification API)</span></li>
+                    <ul class="list-disc ml-[20px] mt-1">
+                        <li>Real-time tracking of all staff within Secure Zones</li>
+                        <li>Monitoring of authorized personnel in Risk Zones</li>
+                        <li>Instant alerts when unauthorized staff enter Risk Zones</li>
+                        <li>Color-coded visualization on both employee devices and monitoring dashboard</li>
+                    </ul>
+                
+            </div>
+            <div>
+                <li>Enhanced Connectivity (via Quality-of-service on Demand API)
+                    <ul class="list-disc ml-[20px]">
+                        <li>Automatically increases network quality and reliability for staff in Risk Zones</li>
+                        <li>Ensures critical communications remain stable in hazardous environments</li>
+                        <li>Enables clear emergency communications between dashboard operators and employees</li>
+                    </ul>
+                </li>
+            </div>
+            <div>
+                <li>Device Status Monitoring (via Device Status API)
+                    <ul class="list-disc ml-[20px]">
+                        <li>Continuous monitoring of staff device connectivity</li>
+                        <li>Immediate notification of disconnected devices</li>
+                        <li>Visual representation of offline employees on the monitoring dashboard</li>
+                    </ul>
+                </li>
+            </div>
+        </ol>
+    </div>
     <h2 class="text-4xl underline">
         Use Case Scenarios
     </h2>  
