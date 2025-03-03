@@ -1,47 +1,8 @@
 ---
-import "leaflet/dist/leaflet.css";
+const users = [
+  { id: 1, name: "Juan", lat: 41.3726, lon: 2.1514 },
+  { id: 2, name: "Ana", lat: 41.3722, lon: 2.1518 },
+  { id: 3, name: "Carlos", lat: 41.3728, lon: 2.1521 },
+];
 
-if (typeof window !== "undefined") {
-  import("leaflet").then((L) => {
-    const map = L.map("map").setView([41.3724, 2.1516], 17);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors",
-    }).addTo(map);
-
-    const personas = [
-      { id: 1, nombre: "Juan", lat: 41.3726, lon: 2.1514 },
-      { id: 2, nombre: "Ana", lat: 41.3722, lon: 2.1518 },
-      { id: 3, nombre: "Carlos", lat: 41.3728, lon: 2.1521 },
-    ];
-
-    const marcadores = personas.map((persona) =>
-      L.marker([persona.lat, persona.lon])
-        .addTo(map)
-        .bindPopup(`👤 ${persona.nombre}`)
-    );
-
-    function moverPersonas() {
-      marcadores.forEach((marker, index) => {
-        let nuevaLat = personas[index].lat + (Math.random() - 0.5) * 0.0003;
-        let nuevaLon = personas[index].lon + (Math.random() - 0.5) * 0.0003;
-
-        marker.setLatLng([nuevaLat, nuevaLon]);
-        personas[index].lat = nuevaLat;
-        personas[index].lon = nuevaLon;
-      });
-    }
-
-    setInterval(moverPersonas, 2000);
-  });
-}
 ---
-
-<style>
-  #map {
-    height: 600px;
-    width: 100%;
-  }
-</style>
-
-<div id="map"></div>
