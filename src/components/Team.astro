@@ -1,0 +1,12 @@
+---
+import { Meteors } from "@/components/magicui/meteors";
+---
+
+<section
+  class="container relative flex h-screen w-full items-center justify-center "
+>
+  <h1 class="text-4xl font-bold text-white">Lluvia de Meteoros</h1>
+
+  <!-- Cargar el componente Meteors en el cliente -->
+  <Meteors client:load number={30} maxDuration={8} />
+</section>
