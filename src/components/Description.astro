@@ -1,91 +1,104 @@
 ---
+import DefaultCard from "./DefaultCard.astro";
 import FeatureCard from "./FeatureCard.astro";
 ---
 
-<section class="flex flex-col py-8 px-0 ">
+<section class="flex flex-col py-8 px-0">
     <h1 class="text-3xl font-bold text-white mb-3">
         U-SAFE: Enterprise Safety Zone Management
     </h1>
     <div class="my-9 p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-2xl underline mb-5">
-            App Overview
-        </h2>
+        <h2 class="text-2xl underline mb-5">App Overview</h2>
         <p class="text-lg">
-            <b>U-SAFE</b> enables enterprises to establish and manage controlled physical working zones within their facilities to monitor and prevent security incidents.
+            <b>U-SAFE</b> enables enterprises to establish and manage controlled
+            physical working zones within their facilities to monitor and prevent
+            security incidents.
         </p>
         <p class="my-3 text-lg">
             These zones are classified into two categories:
         </p>
-        <ul class="mt-7 flex flex-col md:flex-row justify-center gap-4 md:gap-10">
+        <ul
+            class="mt-7 flex flex-col md:flex-row justify-center gap-4 md:gap-10"
+        >
             <li>
-                <FeatureCard title="Secure Zones" description="Standard working areas suitable for all staff"/>
+                <DefaultCard
+                    title="Secure Zones"
+                    description="Standard working areas suitable for all staff"
+                />
             </li>
             <li>
-                <FeatureCard title="Risk Zones" description="Areas with potential hazards requiring special authorization"/>
+                <DefaultCard
+                    title="Risk Zones"
+                    description="Areas with potential hazards requiring special authorization"
+                />
             </li>
         </ul>
     </div>
-    
 
     <div class="p-9 rounded-2xl bg-gray-800 mb-10">
         <h3 class="text-2xl mb-5 underline">User Implementation</h3>
         <ul class="list-disc flex flex-col gap-3 ml-[15px]">
             {/* TO-DO: add more suitable icons instead of disc type*/}
             <li>
-                All employees receive company smartphones with pre-installed U-SAFE application
+                All employees receive company smartphones with pre-installed
+                U-SAFE application
             </li>
             <li>
                 The app continuously monitors employee locations and zone access
             </li>
             <li>
-                Access permissions are managed through the system, with Risk Zones restricted to authorized personnel only
+                Access permissions are managed through the system, with Risk
+                Zones restricted to authorized personnel only
             </li>
             <li>
-                Visual indicators (color-coded badges) on employee devices show current safety status
+                Visual indicators (color-coded badges) on employee devices show
+                current safety status
             </li>
         </ul>
     </div>
 
     <div class="p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-2xl md:text-4xl font-medium underline mb-5">Core Capabilities</h2>
+        <h2 class="text-2xl md:text-4xl font-medium underline mb-5">
+            Core Capabilities
+        </h2>
         <p class="mb-3">
-            Our solution leverages Nokia's Network as Code APIs to provide enhanced security and monitoring:
+            Our solution leverages Nokia's Network as Code APIs to provide
+            enhanced security and monitoring:
         </p>
-        <ol class="list-decimal">
-            <div class="bg-gray-700 px-12 py-5 rounded-xl">
-                <li class="text-2xl">Location Management <span class="hidden md:inline text-gray-400 text-sm">(via Location Verification API)</span></li>
-                <span class="text-gray-400 text-[12px] md:hidden">(via Location Verification API)</span>
-                    <ul class="list-disc mt-1">
-                        <li>Real-time tracking of all staff within Secure Zones</li>
-                        <li>Monitoring of authorized personnel in Risk Zones</li>
-                        <li>Instant alerts when unauthorized staff enter Risk Zones</li>
-                        <li>Color-coded visualization on both employee devices and monitoring dashboard</li>
-                    </ul>
-                
-            </div>
-            <div>
-                <li>Enhanced Connectivity (via Quality-of-service on Demand API)
-                    <ul class="list-disc ml-[20px]">
-                        <li>Automatically increases network quality and reliability for staff in Risk Zones</li>
-                        <li>Ensures critical communications remain stable in hazardous environments</li>
-                        <li>Enables clear emergency communications between dashboard operators and employees</li>
-                    </ul>
-                </li>
-            </div>
-            <div>
-                <li>Device Status Monitoring (via Device Status API)
-                    <ul class="list-disc ml-[20px]">
-                        <li>Continuous monitoring of staff device connectivity</li>
-                        <li>Immediate notification of disconnected devices</li>
-                        <li>Visual representation of offline employees on the monitoring dashboard</li>
-                    </ul>
-                </li>
-            </div>
+        <ol class="list-decimal flex flex-col gap-3">
+            <FeatureCard
+                title="Location Management"
+                api="Location Verification API"
+                features={[
+                    "Real-time tracking of all staff within Secure Zones",
+                    "Monitoring of authorized personnel in Risk Zones",
+                    "Instant alerts when unauthorized staff enter Risk Zones",
+                    "Color-coded visualization on both employee devices and monitoring dashboard",
+                ]}
+            />
+
+            <FeatureCard
+                title="Enhanced Connectivity"
+                api="Quality-of-service on Demand API"
+                features={[
+                    "Automatically increases network quality and reliability for staff in Risk Zones",
+                    "Ensures critical communications remain stable in hazardous environments",
+                    "Enables clear emergency communications between dashboard operators and employees",
+                ]}
+            />
+
+            <FeatureCard
+                title="Device Status Monitoring"
+                api="Device Status API"
+                features={[
+                    "Continuous monitoring of staff device connectivity",
+                    "Immediate notification of disconnected devices",
+                    "Visual representation of offline employees on the monitoring dashboard",
+                ]}
+            />
         </ol>
     </div>
-    <h2 class="text-4xl underline">
-        Use Case Scenarios
-    </h2>  
+    <h2 class="text-4xl underline">Use Case Scenarios</h2>
     <h3>Standard Operations</h3>
     <ul class="list-disc">
         <li>
@@ -94,19 +107,21 @@ import FeatureCard from "./FeatureCard.astro";
                 <li>
                     Monitoring dashboard displays employees in green
                     <ul class="list-disc">
-                        <li>Employee devices show green status badges
+                        <li>Employee devices show green status badges</li>
+                        <li>Normal network parameters applied</li>
+                        <li>Authorized Employees in Risk Zones</li>
+                        <li>
+                            Monitoring dashboard displays these employees in
+                            yellow
                         </li>
-                        <li>Normal network parameters applied
+                        <li>Employee devices show yellow status badges</li>
+                        <li>
+                            Network quality automatically enhanced for reliable
+                            communications
                         </li>
-                        <li>Authorized Employees in Risk Zones
-                        </li>
-                        <li>Monitoring dashboard displays these employees in yellow
-                        </li>
-                        <li>Employee devices show yellow status badges
-                        </li>
-                        <li>Network quality automatically enhanced for reliable communications
-                        </li>
-                        <li>Dashboard operators can monitor these employees with higher priority
+                        <li>
+                            Dashboard operators can monitor these employees with
+                            higher priority
                         </li>
                     </ul>
                 </li>
@@ -122,27 +137,26 @@ import FeatureCard from "./FeatureCard.astro";
                 <li>
                     Monitoring dashboard displays prominent red alert
                     <ul>
-                        <li>Employee device triggers loud red alert with audio warning
-
+                        <li>
+                            Employee device triggers loud red alert with audio
+                            warning
                         </li>
-                        <li>Nearby employees receive proximity alerts
-
+                        <li>Nearby employees receive proximity alerts</li>
+                        <li>
+                            Network quality automatically enhanced to ensure
+                            clear communication
                         </li>
-                        <li>Network quality automatically enhanced to ensure clear communication
-
+                        <li>
+                            Dashboard operator can immediately call the employee
+                            to direct them to exit the zone
                         </li>
-                        <li>Dashboard operator can immediately call the employee to direct them to exit the zone
-
-                        </li>
-                        <li>Employee devices show yellow status badges
-                        </li>
+                        <li>Employee devices show yellow status badges</li>
                     </ul>
                 </li>
             </ul>
         </li>
     </ul>
-    <h3>Employee Goes Offline
-    </h3>
+    <h3>Employee Goes Offline</h3>
     <ul class="list-disc">
         <li>
             Monitoring dashboard displays offline status
@@ -150,39 +164,55 @@ import FeatureCard from "./FeatureCard.astro";
                 <li>
                     Last known location remains visible to operators
                     <ul class="list-disc">
-                        <li>System can initiate predetermined emergency protocols based on last location
+                        <li>
+                            System can initiate predetermined emergency
+                            protocols based on last location
                         </li>
                     </ul>
                 </li>
             </ul>
         </li>
     </ul>
-    <h2 class="text-4xl underline">Implementation Benefits
-    </h2>
-    <h3>Safety & Response
-    </h3>
+    <h2 class="text-4xl underline">Implementation Benefits</h2>
+    <h3>Safety & Response</h3>
     <ul class="list-disc">
-        <li>Prevents unauthorized access to hazardous areas with real-time alerts</li>
+        <li>
+            Prevents unauthorized access to hazardous areas with real-time
+            alerts
+        </li>
         <li>Decreases emergency response time through instant notifications</li>
-        <li>Enables peer intervention through proximity alerts to nearby employees</li>
+        <li>
+            Enables peer intervention through proximity alerts to nearby
+            employees
+        </li>
         <li>Ensures reliable communications during critical situations</li>
     </ul>
-    <h3>Operational Advantages
-    </h3>
+    <h3>Operational Advantages</h3>
     <ul class="list-disc">
-        <li>Centralizes monitoring through an intuitive color-coded dashboard</li>
+        <li>
+            Centralizes monitoring through an intuitive color-coded dashboard
+        </li>
         <li>Reduces safety management overhead through automation</li>
-        <li>Creates collective responsibility with every employee as a potential first responder</li>
-        <li>Provides multiple warning layers combining system alerts with human intervention</li>
+        <li>
+            Creates collective responsibility with every employee as a potential
+            first responder
+        </li>
+        <li>
+            Provides multiple warning layers combining system alerts with human
+            intervention
+        </li>
     </ul>
-    <h3>Business Value
-    </h3>
+    <h3>Business Value</h3>
     <ul class="list-disc">
-        <li class="pl-[-20px]">Helps meet regulatory compliance requirements with comprehensive audit logs</li>
+        <li class="pl-[-20px]">
+            Helps meet regulatory compliance requirements with comprehensive
+            audit logs
+        </li>
         <li>Reduces costs associated with workplace incidents and insurance</li>
-        <li>Improves productivity by optimizing zone management and reducing disruptions</li>
+        <li>
+            Improves productivity by optimizing zone management and reducing
+            disruptions
+        </li>
         <li>Demonstrates organizational commitment to employee safety</li>
     </ul>
-    
-
 </section>
