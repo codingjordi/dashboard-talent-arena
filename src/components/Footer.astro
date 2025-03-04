@@ -4,7 +4,7 @@ import img from "@/assets/logo.webp";
 import { Image } from "astro:assets";
 ---
 
-<footer class="backdrop-blur-md rounded-lg shadow-sm container border-1 px-2">
+<footer class="backdrop-blur-md rounded-lg shadow-sm container border-1 px-4">
   <br class="w-full max-w-screen-xl mx-auto p-4 md:py-8" />
   <div class="sm:flex sm:items-center sm:justify-between">
     <a
@@ -18,6 +18,7 @@ import { Image } from "astro:assets";
         >U-SAFE</span
       >
     </a>
+
     <ul
       class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
     >
@@ -36,44 +37,49 @@ import { Image } from "astro:assets";
     </ul>
   </div>
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-  <div class="pb-20 md:pb-6 flex flex-col gap-2">
-    <p>
-      Made with <span class="animate-pulse">❤️</span> by:
-    </p>
-    <div class="flex flex-wrap gap-6 text-purple-300 ">
-      <a
-        class="relative link-underline"
-        href="https://www.linkedin.com/in/jordi-saperas-castro"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Jordi Saperas Castro
-      </a>
-      <a
-        class="relative link-underline"
-        href="https://www.jramma.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Jramma 🚀
-      </a>
-      <a
-        class="relative link-underline"
-        href="https://www.linkedin.com/in/valdemarpereiradematos/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Valdemar Pereira
-      </a>
-      <a
-        class="relative link-underline"
-        href="https://www.linkedin.com/in/eduardo-bernal-perez/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Eduardo Bernal Pérez
-      </a>
+  <div class="flex items-center justify-between">
+    <div class="pb-20 md:pb-6 flex flex-col gap-2">
+      <p>
+        Made with <span class="animate-pulse">❤️</span> by:
+      </p>
+      <div class="flex flex-wrap gap-6 text-purple-300">
+        <a
+          class="relative link-underline"
+          href="https://www.linkedin.com/in/jordi-saperas-castro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Jordi Saperas Castro
+        </a>
+        <a
+          class="relative link-underline"
+          href="https://www.jramma.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Jramma 🚀
+        </a>
+        <a
+          class="relative link-underline"
+          href="https://www.linkedin.com/in/valdemarpereiradematos/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Valdemar Pereira
+        </a>
+        <a
+          class="relative link-underline"
+          href="https://www.linkedin.com/in/eduardo-bernal-perez/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Eduardo Bernal Pérez
+        </a>
+      </div>
     </div>
+    <a href="https://github.com/jramma/dashboard" target="_blank">
+      <Icon name="github" class="text-3xl" />
+    </a>
   </div>
 </footer>
 
@@ -101,9 +107,9 @@ import { Image } from "astro:assets";
     color: inherit;
     text-decoration: none;
   }
-  
+
   .link-underline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
