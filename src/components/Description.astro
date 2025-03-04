@@ -65,10 +65,10 @@ import FeatureCard from "./FeatureCard.astro";
             Our solution leverages Nokia's Network as Code APIs to provide
             enhanced security and monitoring:
         </p>
-        <ol class="list-decimal flex flex-col gap-3">
+        <ol class="list-decimal flex flex-col md:grid md:grid-cols-3 gap-5">
             <FeatureCard
                 title="Location Management"
-                api="Location Verification API"
+                api="via Location Verification API"
                 features={[
                     "Real-time tracking of all staff within Secure Zones",
                     "Monitoring of authorized personnel in Risk Zones",
@@ -79,7 +79,7 @@ import FeatureCard from "./FeatureCard.astro";
 
             <FeatureCard
                 title="Enhanced Connectivity"
-                api="Quality-of-service on Demand API"
+                api="via Quality-of-service on Demand API"
                 features={[
                     "Automatically increases network quality and reliability for staff in Risk Zones",
                     "Ensures critical communications remain stable in hazardous environments",
@@ -89,7 +89,7 @@ import FeatureCard from "./FeatureCard.astro";
 
             <FeatureCard
                 title="Device Status Monitoring"
-                api="Device Status API"
+                api="via Device Status API"
                 features={[
                     "Continuous monitoring of staff device connectivity",
                     "Immediate notification of disconnected devices",
@@ -98,121 +98,86 @@ import FeatureCard from "./FeatureCard.astro";
             />
         </ol>
     </div>
-    <h2 class="text-4xl underline">Use Case Scenarios</h2>
-    <h3>Standard Operations</h3>
-    <ul class="list-disc">
-        <li>
-            Employees in Secure Zones
-            <ul class="list-disc">
-                <li>
-                    Monitoring dashboard displays employees in green
-                    <ul class="list-disc">
-                        <li>Employee devices show green status badges</li>
-                        <li>Normal network parameters applied</li>
-                        <li>Authorized Employees in Risk Zones</li>
-                        <li>
-                            Monitoring dashboard displays these employees in
-                            yellow
-                        </li>
-                        <li>Employee devices show yellow status badges</li>
-                        <li>
-                            Network quality automatically enhanced for reliable
-                            communications
-                        </li>
-                        <li>
-                            Dashboard operators can monitor these employees with
-                            higher priority
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
 
-    <h3>Safety Interventions</h3>
-    <ul class="list-disc">
-        <li>
-            Unauthorized Employee Enters Risk Zone
-            <ul>
-                <li>
-                    Monitoring dashboard displays prominent red alert
-                    <ul>
-                        <li>
-                            Employee device triggers loud red alert with audio
-                            warning
-                        </li>
-                        <li>Nearby employees receive proximity alerts</li>
-                        <li>
-                            Network quality automatically enhanced to ensure
-                            clear communication
-                        </li>
-                        <li>
-                            Dashboard operator can immediately call the employee
-                            to direct them to exit the zone
-                        </li>
-                        <li>Employee devices show yellow status badges</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h3>Employee Goes Offline</h3>
-    <ul class="list-disc">
-        <li>
-            Monitoring dashboard displays offline status
-            <ul class="list-disc">
-                <li>
-                    Last known location remains visible to operators
-                    <ul class="list-disc">
-                        <li>
-                            System can initiate predetermined emergency
-                            protocols based on last location
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h2 class="text-4xl underline">Implementation Benefits</h2>
-    <h3>Safety & Response</h3>
-    <ul class="list-disc">
-        <li>
-            Prevents unauthorized access to hazardous areas with real-time
-            alerts
-        </li>
-        <li>Decreases emergency response time through instant notifications</li>
-        <li>
-            Enables peer intervention through proximity alerts to nearby
-            employees
-        </li>
-        <li>Ensures reliable communications during critical situations</li>
-    </ul>
-    <h3>Operational Advantages</h3>
-    <ul class="list-disc">
-        <li>
-            Centralizes monitoring through an intuitive color-coded dashboard
-        </li>
-        <li>Reduces safety management overhead through automation</li>
-        <li>
-            Creates collective responsibility with every employee as a potential
-            first responder
-        </li>
-        <li>
-            Provides multiple warning layers combining system alerts with human
-            intervention
-        </li>
-    </ul>
-    <h3>Business Value</h3>
-    <ul class="list-disc">
-        <li class="pl-[-20px]">
-            Helps meet regulatory compliance requirements with comprehensive
-            audit logs
-        </li>
-        <li>Reduces costs associated with workplace incidents and insurance</li>
-        <li>
-            Improves productivity by optimizing zone management and reducing
-            disruptions
-        </li>
-        <li>Demonstrates organizational commitment to employee safety</li>
-    </ul>
+    <div class="p-9 rounded-2xl bg-gray-800 mb-10">
+        <h2 class="text-4xl underline">Use Case Scenarios</h2>
+        <h3>Standard Operations</h3>
+        <ul class="list-disc">
+            <FeatureCard
+                title="Employees in Secure Zones"
+                features={[
+                    "Monitoring dashboard displays employees in green",
+                    "Employee devices show green status badges",
+                    "Instant alerts when unauthorized staff enter Risk Zones",
+                    "Color-coded visualization on both employee devices and monitoring dashboard",
+                ]}
+            />
+            <FeatureCard
+                title="Authorized Employees in Risk Zones"
+                features={[
+                    "Monitoring dashboard displays these employees in yellow",
+                    "Employee devices show yellow status badges",
+                    "Network quality automatically enhanced for reliable communications",
+                    "Dashboard operators can monitor these employees with higher priority",
+                ]}
+            />
+        </ul>
+        <h3>Safety Interventions</h3>
+        <ul class="list-disc">
+            <FeatureCard
+                title="Unauthorized Employee Enters Risk Zone"
+                features={[
+                    "Monitoring dashboard displays prominent red alert",
+                    "Employee device triggers loud red alert with audio warning",
+                    "Network quality automatically enhanced to ensure clear communication",
+                    "Dashboard operator can immediately call the employee to direct them to exit the zone",
+                ]}
+            />
+        </ul>
+        <h3>Employee Goes Offline</h3>
+        <ul class="list-disc">
+            <FeatureCard
+                title="Monitoring and Response"
+                features={[
+                    "Monitoring dashboard displays offline status",
+                    "Last known location remains visible to operators",
+                    "System can initiate predetermined emergency protocols based on last location"
+                ]}
+            />
+        </ul>
+    </div>
+
+    <div class="my-9 p-9 rounded-2xl bg-gray-800 mb-10">
+        <h2 class="text-4xl underline">Implementation Benefits</h2>
+        <h3>Safety & Response</h3>
+        <ul class="list-disc">
+            <FeatureCard
+                title="Safety & Response"
+                features={[
+                    "Prevents unauthorized access to hazardous areas with real-time alerts",
+                    "Decreases emergency response time through instant notifications",
+                    "Enables peer intervention through proximity alerts to nearby employees",
+                    "Ensures reliable communications during critical situations"
+                ]}
+            />
+            <FeatureCard
+                title="Operational Advantages"
+                features={[
+                    "Centralizes monitoring through an intuitive color-coded dashboard",
+                    "Reduces safety management overhead through automation",
+                    "Creates collective responsibility with every employee as a potential first responder",
+                    "Provides multiple warning layers combining system alerts with human intervention"
+                ]}
+            />
+            <FeatureCard
+                title="Business Value"
+                features={[
+                    "Helps meet regulatory compliance requirements with comprehensive audit logs",
+                    "Reduces costs associated with workplace incidents and insurance",
+                    "Improves productivity by optimizing zone management and reducing disruptions",
+                    "Demonstrates organizational commitment to employee safety"
+                ]}
+            />
+        </ul>
+    </div>
 </section>
