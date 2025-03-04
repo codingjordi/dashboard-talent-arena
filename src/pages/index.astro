@@ -7,6 +7,61 @@ import Report from "@/components/Report.astro";
 import { AccidentesChart } from "@/components/AccidentChart";
 import Smmap from "@/components/Smmap.astro";
 import Modal from "@/components/Modal.astro";
+
+let zones: any = [];
+let showModal = false;
+
+const fetchZonesStatus = async () => {
+  try {
+    const response = await fetch("http://52.143.185.255:56565/getZonesStatus");
+    const data = await response.json();
+    return data.Zones;
+  } catch (error) {
+    console.error("Error fetching zones status:", error);
+    return [
+      {
+        id: 0,
+        status: 0,
+        name: "Work",
+        type: 0,
+        location: {
+          lat: 41.371563,
+          long: 2.152216,
+          rad: 2000,
+        },
+        devices: [],
+      },
+      {
+        id: 1,
+        status: 0,
+        name: "Restricted",
+        type: 1,
+        location: {
+          lat: 41.36852,
+          long: 2.160378,
+          rad: 2000,
+        },
+        devices: [],
+      },
+    ];
+  }
+};
+
+const updateZones = async () => {
+  const newZones = await fetchZonesStatus();
+  zones = newZones;
+
+  // Check if any zone has status 1
+  const hasRestrictedZone = newZones.some((zone: any) => zone.status === 1);
+  if (hasRestrictedZone) {
+    showModal = true;
+  } else {
+    showModal = false;
+  }
+};
+
+updateZones();
+setInterval(updateZones, 5000);
 ---
 
 <Layout>
@@ -28,13 +83,13 @@ import Modal from "@/components/Modal.astro";
       <h2 class="p-6 text-4xl font-bold">Current Map</h2>
 
       <div class="hidden md:block">
-        <Map />
+        <Map zones={zones} />
       </div>
       <div class="md:hidden overflow-hidden">
-        <Smmap />
+        <Smmap zones={zones} />
       </div>
       <div class="flex w-full justify-center">
-        <Modal />
+        <Modal {zones} {showModal} />
       </div>
     </div>
   </div>

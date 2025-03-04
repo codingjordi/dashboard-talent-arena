@@ -14,48 +14,17 @@ interface Zone {
   devices: Record<string, any>;
 }
 
-const zones: Zone[] = [
-  {
-    id: 0,
-    status: 0,
-    name: "Connection",
-    location: {
-      lat: 41.373419,
-      long: 2.14952,
-      rad: 20,
-    },
-    devices: {},
-  },
-  {
-    id: 1,
-    status: 0,
-    name: "Hotspot",
-    location: {
-      lat: 41.372703,
-      long: 2.149429,
-      rad: 20,
-    },
-    devices: {},
-  },
-  {
-    id: 2,
-    status: 0,
-    name: "SwitchonTalks",
-    location: {
-      lat: 41.37203,
-      long: 2.150384,
-      rad: 20,
-    },
-    devices: {},
-  },
-];
+const { zones } = Astro.props;
+
 // Status 0: Green, 1: Red
 ---
 
 <section class="container flex flex-col pt-6 relative">
   <div id="zones" class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
     <div
-      class="zone border-solid border-red-500 bg-red-500/50 col-start-1 col-end-7 row-start-6 row-end-8 rounded-md border-1 animate-pulse"
+      class={`zone border-solid ${
+        zones.some(zone=> zone.status === 1) ? "border-red-500 bg-red-500/50" : "border-yellow-500 bg-yellow-500/50"
+      } col-start-1 col-end-7 row-start-6 row-end-8 rounded-md border-1 animate-pulse`}
     >
     </div>
     <div
@@ -68,12 +37,12 @@ const zones: Zone[] = [
 <section class="container flex flex-col items-start gap-6 pt-6 pb-30">
   <div class="flex items-center gap-4">
     <div class="bg-red-500 animate-pulse h-4 w-4"></div><p>
-      Employee in the restringed area
+      Employee in the restricted area
     </p>
   </div>
   <div class="flex items-center gap-4">
     <div class="bg-yellow-500 animate-pulse h-4 w-4"></div><p>
-      Employee authorized in the restringed area
+      Employee authorized in the restricted area
     </p>
   </div>
   <div class="flex items-center gap-4">
