@@ -9,14 +9,12 @@ const { status } = Astro.props;
 const getCurrentTime = () => {
   const now = new Date();
   return {
-    hours: now.getHours(),
-    minutes: now.getMinutes(),
-    seconds: now.getSeconds(),
+    hours: now.getHours().toString().padStart(2, '0'),
+    minutes: now.getMinutes().toString().padStart(2, '0'),
+    seconds: now.getSeconds().toString().padStart(2, '0'),
   };
 };
 const currentTime = getCurrentTime();
-
-
 ---
 
 <div class="w-full text-center py-6  md:py-20">
@@ -48,19 +46,3 @@ const currentTime = getCurrentTime();
   </div>
   {status === 3 && <div class="text-red-500 mt-4 text-xl">Offline</div>}
 </div>
-
-<script is:inline>
-  const clockElement = document.getElementById("clock");
-  const hourTicker = clockElement.children[0];
-  const minuteTicker = clockElement.children[2];
-  const secondTicker = clockElement.children[4];
-
-  const updateClock = () => {
-    const now = new Date();
-    hourTicker.value = now.getHours();
-    minuteTicker.value = now.getMinutes();
-    secondTicker.value = now.getSeconds();
-  };
-
-  setInterval(updateClock, 1000);
-</script>

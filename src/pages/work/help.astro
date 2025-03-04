@@ -16,13 +16,70 @@ console.log(statusNumber);
     <BtnAlert status={statusNumber} href="/work/offline"/>
   </section>
 </Layout>
-<!-- 
-    Reloj
-    Ancho de banda mejorado para zonas de riesgo
 
-    
-    tick verde si estas ok
-    tick amarillo zona riesgo pero autorizado
-    tick rojo no autorizado con alarma
-    4 offline
--->
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    let zones = [];
+
+    const fetchZonesStatus = async () => {
+      try {
+        const response = await fetch("http://52.143.185.255:56565/getZonesStatus", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+        const data = await response.json();
+
+        if (!data.Zones || !Array.isArray(data.Zones)) {
+          console.warn("Respuesta del servidor no contiene 'Zones' como array, devolviendo dummy.");
+          return getDummyZones();
+        }
+
+        return data.Zones;
+      } catch (error) {
+        console.error("Error al obtener el estado de las zonas:", error);
+        return getDummyZones();
+      }
+    };
+
+    const getDummyZones = () => [
+      {
+        id: 0,
+        status: 0,
+        name: "Work",
+        type: 0,
+        location: { lat: 41.371563, long: 2.152216, rad: 2000 },
+        devices: [],
+      },
+      {
+        id: 1,
+        status: 0,
+        name: "Restricted",
+        type: 1,
+        location: { lat: 41.36852, long: 2.160378, rad: 2000 },
+        devices: [],
+      }
+    ];
+
+    const updateZones = async () => {
+      const newZones = await fetchZonesStatus();
+      console.log("Zonas actualizadas:", newZones);
+      if (!Array.isArray(newZones)) {
+        console.error("fetchZonesStatus() devolvió un valor no válido:", newZones);
+        return;
+      }
+
+      zones = newZones;
+      const hasRestrictedZone = zones.some(zone => zone?.status === 1); // Evita error de undefined
+
+      if (!hasRestrictedZone) {
+        window.location.href = "/work";
+      }
+    };
+
+    updateZones();
+    setInterval(updateZones, 5000);
+  });
+</script>
