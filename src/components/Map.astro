@@ -22,9 +22,8 @@ const { zones } = Astro.props;
 <section class="container flex flex-col pt-6 relative">
   <div id="zones" class="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-1">
     <div
-      class={`zone border-solid ${
-        zones.some(zone=> zone.status === 1) ? "border-red-500 bg-red-500/50" : "border-yellow-500 bg-yellow-500/50"
-      } col-start-1 col-end-7 row-start-6 row-end-8 rounded-md border-1 animate-pulse`}
+      id="map-zone"
+      class="zone border-solid border-yellow-500 bg-yellow-500/50 col-start-1 col-end-7 row-start-6 row-end-8 rounded-md border-1 animate-pulse"
     >
     </div>
     <div
