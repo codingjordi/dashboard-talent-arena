@@ -3,7 +3,7 @@ import DefaultCard from "./DefaultCard.astro";
 import FeatureCard from "./FeatureCard.astro";
 ---
 
-<section class="flex flex-col py-8 px-0">
+<section class="flex flex-col py-8">
     <h1 class="text-3xl font-bold text-white mb-3">
         U-SAFE: Enterprise Safety Zone Management
     </h1>
@@ -58,14 +58,14 @@ import FeatureCard from "./FeatureCard.astro";
     </div>
 
     <div class="p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-2xl md:text-4xl font-medium underline mb-5">
+        <h2 class="text-2xl md:text-4xl font-medium underline mb-4">
             Core Capabilities
         </h2>
         <p class="mb-3 text-lg">
             Our solution leverages Nokia's Network as Code APIs to provide
             enhanced security and monitoring:
         </p>
-        <ol class="list-decimal flex flex-col md:grid md:grid-cols-3 gap-5">
+        <ol class="list-decimal flex flex-col lg:grid md:grid-cols-3 gap-5">
             <FeatureCard
                 title="Location Management"
                 api="via Location Verification API"
@@ -100,10 +100,10 @@ import FeatureCard from "./FeatureCard.astro";
     </div>
 
     <div class="p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-4xl underline">Use Case Scenarios</h2>
-        <h3 class='text-2xl font-extralight'>Standard Operations</h3>
-        <div class="md:flex">
-            <ul class="list-disc md:w-1/2">
+        <h2 class="text-2xl md:text-4xl underline mb-4">Use Case Scenarios</h2>
+        <h3 class='text-xl md:text-2xl font-extralight'>Standard Operations</h3>
+        <div class="flex flex-col md:flex-row gap-5 my-6">
+            <div class="list-disc md:w-1/2">
                 <FeatureCard
                     title="Employees in Secure Zones"
                     titleClass="text-green-500 animate-pulse drop-shadow-[0_4px_6px_rgba(34,197,94,0.5)]"
@@ -114,7 +114,7 @@ import FeatureCard from "./FeatureCard.astro";
                         "Color-coded visualization on both employee devices and monitoring dashboard",
                     ]}
                 />
-            </ul>
+                    </div>
         
             <ul class="list-disc md:w-1/2">
                 <FeatureCard
@@ -131,8 +131,8 @@ import FeatureCard from "./FeatureCard.astro";
         </div>
         
 
-        <h3>Safety Interventions</h3>
-        <ul class="list-disc">
+        <h3 class='text-xl md:text-2xl font-extralight'>Safety Interventions</h3>
+        <ul class="list-disc my-6">
             <FeatureCard
                 title="Unauthorized Employee Enters Risk Zone"
                 titleClass="text-red-500 animate-pulse drop-shadow-[0_4px_6px_rgba(248,113,113,0.5)]"
@@ -144,11 +144,11 @@ import FeatureCard from "./FeatureCard.astro";
                 ]}
             />
         </ul>
-        <h3>Employee Goes Offline</h3>
-        <ul class="list-disc">
+        <h3 class='text-xl md:text-2xl font-extralight'>Employee Goes Offline</h3>
+        <ul class="list-disc my-5">
             <FeatureCard
                 title="Monitoring and Response"
-                features={[
+                titleClass="text-zinc-400 animate-pulse 2   adrop-shadow-[0_4px_6px_rgba(161,161,170,0.5)]"                features={[
                     "Monitoring dashboard displays offline status",
                     "Last known location remains visible to operators",
                     "System can initiate predetermined emergency protocols based on last location",
@@ -158,9 +158,8 @@ import FeatureCard from "./FeatureCard.astro";
     </div>
 
     <div class="my-9 p-9 rounded-2xl bg-gray-800 mb-10">
-        <h2 class="text-4xl underline">Implementation Benefits</h2>
-        <h3>Safety & Response</h3>
-        <ul class="list-disc">
+        <h2 class="text-4xl underline mb-8">Implementation Benefits</h2>
+        <ul class="my-6 flex flex-col lg:grid lg:grid-cols-3 gap-5 list-disc">
             <FeatureCard
                 title="Safety & Response"
                 features={[
@@ -191,3 +190,26 @@ import FeatureCard from "./FeatureCard.astro";
         </ul>
     </div>
 </section>
+
+{/* ICONS
+
+Secure Zones
+Risk Zones
+
+
+Core capabilities//
+
+Location management:
+Enhanced connectivity 
+Device Status Monitoring
+
+use case scenarios //
+
+Employees in secure zones
+authorized employees in risk zones
+unauthorized employee enters risk zone
+monitoring and response
+
+
+
+*/}
