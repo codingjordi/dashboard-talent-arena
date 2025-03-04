@@ -1,23 +1,24 @@
 ---
 interface Props {
-  title: string;
-  api?: string;
-  features: string[];
-}
-
-const { title, api, features } = Astro.props as Props;
----
-
-<div class="bg-gray-700 px-12 py-5 rounded-xl">
-  <li class="text-2xl md:text-3xl -mb-2">
-    {title} 
-    
-  </li>
-  {api && <span class="text-gray-400 text-[12px] md:hidden">{api}</span>}
+    title: string;
+    titleClass?: string;  // Nueva propiedad para las clases del título
+    api?: string;
+    features: string[];
+  }
   
-  <ul class="list-disc mt-3 flex flex-col gap-1">
-    {features.map((feature) => (
-      <li>{feature}</li>
-    ))}
-  </ul>
-</div>
+  const { title, titleClass, api, features } = Astro.props as Props;
+---
+  
+  <div class="bg-gray-700 w-full px-12 py-5 rounded-xl h-full">
+    <li class={`text-2xl md:text-3xl -mb-2 sm:-mb-1 ${titleClass || ""}`}>
+      {title}
+    </li>
+    {api && <span class="text-gray-400 text-[12px] sm:text-sm">{`(${api})`}</span>}
+    
+    <ul class="list-disc mt-3 flex flex-col gap-1">
+      {features.map((feature) => (
+        <li>{feature}</li>
+      ))}
+    </ul>
+  </div>
+  
