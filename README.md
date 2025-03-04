@@ -84,3 +84,6 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 ## 📝 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
+
+## Web demo:
+https://talentarena.netlify.app/home/
