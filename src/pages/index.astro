@@ -4,9 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import MapList from "@/components/MapList.astro";
 import Map from "@/components/Map.astro";
 import Report from "@/components/Report.astro";
-import Graph from "@/components/flowbite/Graph.astro";
 import { AccidentesChart } from "@/components/AccidentChart";
 import Smmap from "@/components/Smmap.astro";
+import Modal from "@/components/Modal.astro";
 ---
 
 <Layout>
@@ -15,7 +15,7 @@ import Smmap from "@/components/Smmap.astro";
       <MapList />
     </div>
     <div
-      class="md:col-span-10 col-span-12 flex flex-col overflow-auto  pt-10 md:pt-40"
+      class="md:col-span-10 col-span-12 flex flex-col overflow-auto pt-10 md:pt-40"
     >
       <Report />
 
@@ -24,14 +24,17 @@ import Smmap from "@/components/Smmap.astro";
         <ProfilesList />
         <AccidentesChart client:load />
       </div>
-      <hr>
+      <hr />
       <h2 class="p-6 text-4xl font-bold">Current Map</h2>
 
       <div class="hidden md:block">
         <Map />
       </div>
       <div class="md:hidden overflow-hidden">
-        <Smmap/>
+        <Smmap />
+      </div>
+      <div class="flex w-full justify-center">
+        <Modal />
       </div>
     </div>
   </div>
