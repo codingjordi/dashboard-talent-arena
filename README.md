@@ -57,7 +57,7 @@ Bun es un gestor de paquetes y entorno de ejecución rápido y moderno. Se utili
 
 El proyecto está desplegado en Netlify y se actualiza automáticamente con cada cambio en el repositorio. Puedes acceder al dashboard en la siguiente URL:
 
-[Dashboard Talent Arena 2025](https://your-netlify-deployment-url.netlify.app)
+[Dashboard Talent Arena 2025](https://talentarena.netlify.app/home/)
 
 ## 💻 Instalación y Uso
 
@@ -87,3 +87,12 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 
 ## Web demo:
 https://talentarena.netlify.app/home/
+
+## Authory:
+
+### [Jose Ramos](https://www.linkedin.com/in/jramma/)
++ Github: [@jramma](https://github.com/jramma/) (main contributor)
+
+### [Jordi Saperas](https://www.linkedin.com/in/jordi-saperas-castro/)
++ Github: [@codingjordi](https://github.com/codingjordi/)
+
